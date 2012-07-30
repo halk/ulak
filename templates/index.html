@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>{{ name|capitalize }} NewRelic Summary Report</title>
+</head>
+<body>
+
+<style type="text/css">
+    /* Based on The MailChimp Reset INLINE: Yes. */  
+    /* Client-specific Styles */
+    #outlook a {padding:0;} /* Force Outlook to provide a "view in browser" menu link. */
+    body{font-family:Helvetica, Arial, sans-serif; width:100% !important; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; margin:0; padding:0;} 
+    /* Prevent Webkit and Windows Mobile platforms from changing default font sizes.*/ 
+    .ExternalClass {width:100%;} /* Force Hotmail to display emails at full width */  
+    .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {line-height: 100%;}
+    /* Forces Hotmail to display normal line spacing.  More on that: http://www.emailonacid.com/forum/viewthread/43/ */ 
+    #backgroundTable {margin:0; padding:0; width:100% !important; line-height: 100% !important; border: 10px solid #eee;}
+    /* End reset */
+
+    /* Some sensible defaults for images
+    Bring inline: Yes. */
+    img {outline:none; text-decoration:none; -ms-interpolation-mode: bicubic;} 
+    a img {border:none;} 
+    .image_fix {display:block;}
+
+    /* Yahoo paragraph fix
+    Bring inline: Yes. */
+    p {margin: 1em 0;}
+
+    /* Hotmail header color reset
+    Bring inline: Yes. */
+    h1, h2, h3, h4, h5, h6 {color: black !important;}
+
+    h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {color: #078 !important;}
+
+    h1 a:active, h2 a:active,  h3 a:active, h4 a:active, h5 a:active, h6 a:active {
+    color: red !important; /* Preferably not the same color as the normal header link color.  There is limited support for psuedo classes in email clients, this was added just for good measure. */
+    }
+
+    h1 a:visited, h2 a:visited,  h3 a:visited, h4 a:visited, h5 a:visited, h6 a:visited {
+    color: purple !important; /* Preferably not the same color as the normal header link color. There is limited support for psuedo classes in email clients, this was added just for good measure. */
+    }
+
+    /* Outlook 07, 10 Padding issue fix
+    Bring inline: No.*/
+    table td {border-collapse: collapse;}
+
+/* Remove spacing around Outlook 07, 10 tables
+Bring inline: Yes */
+table { border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; }
+
+    /* Styling your links has become much simpler with the new Yahoo.  In fact, it falls in line with the main credo of styling in email and make sure to bring your styles inline.  Your link colors will be uniform across clients when brought inline.
+    Bring inline: Yes. */
+    a {color: #078; text-decoration:none}
+
+
+    /***************************************************
+    ****************************************************
+    MOBILE TARGETING
+    ****************************************************
+    ***************************************************/
+    @media only screen and (max-device-width: 480px) {
+        /* Part one of controlling phone number linking for mobile. */
+        a[href^="tel"], a[href^="sms"] {
+                    text-decoration: none;
+                    color: blue; /* or whatever your want */
+                    pointer-events: none;
+                    cursor: default;
+                }
+
+        .mobile_link a[href^="tel"], .mobile_link a[href^="sms"] {
+                    text-decoration: default;
+                    color: orange !important;
+                    pointer-events: auto;
+                    cursor: default;
+                }
+
+    }
+
+    /* More Specific Targeting */
+
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    /* You guessed it, ipad (tablets, smaller screens, etc) */
+        /* repeating for the ipad */
+        a[href^="tel"], a[href^="sms"] {
+                    text-decoration: none;
+                    color: blue; /* or whatever your want */
+                    pointer-events: none;
+                    cursor: default;
+                }
+
+        .mobile_link a[href^="tel"], .mobile_link a[href^="sms"] {
+                    text-decoration: default;
+                    color: orange !important;
+                    pointer-events: auto;
+                    cursor: default;
+                }
+    }
+
+    @media only screen and (-webkit-min-device-pixel-ratio: 2) {
+    /* Put your iPhone 4g styles in here */ 
+    }
+
+    /* Android targeting */
+    @media only screen and (-webkit-device-pixel-ratio:.75){
+    /* Put CSS for low density (ldpi) Android layouts in here */
+    }
+    @media only screen and (-webkit-device-pixel-ratio:1){
+    /* Put CSS for medium density (mdpi) Android layouts in here */
+    }
+    @media only screen and (-webkit-device-pixel-ratio:1.5){
+    /* Put CSS for high density (hdpi) Android layouts in here */
+    }
+    /* end Android targeting */
+
+    td.data table{border-collapse:separate;border-spacing:0;width:100%;max-width:100%}h2.section + td.data table{margin-top:-16.0px}td.data table th,td.data table td{font-size:12px;line-height:1.2;margin-bottom:0;padding:7.0px 0 8.0px}td.data table th.numeric,td.data table td.numeric{text-align:right;white-space:nowrap}td.data table th h2,td.data table th h3,td.data table th h4,td.data table td h2,td.data table td h3,td.data table td h4{margin-bottom:0;line-height:1.2}td.data table thead tr th{border-top:5px solid #55aabb;border-bottom:1px solid #eeeeee;padding-top:10px;padding-left:5px;padding-bottom:10px}td.data table thead tr th a{float:left}td.data table thead tr th a:hover{border-bottom:none}td.data table thead tr th.numeric{white-space:normal;font-size:12px;font-weight:normal;color:#888;padding-left:3px}td.data table thead tr th.textual{white-space:normal;font-size:12px;font-weight:normal;color:#888}td.data table thead tr th.last{padding-left:1.5%}td.data table thead tr th:first-child{padding-left:0}td.data table thead tr.subheader th,td.data table thead tr.subheader td{color:#333333;border:none;font-weight:normal;padding-left:0}td.data table tbody td,td.data table tbody th{border-bottom:1px dotted #cccccc;padding-left:5px}td.data table tbody td > p:last-child,td.data table tbody th > p:last-child{margin-bottom:0;font-size:12px}td.data table tbody td > p.help:last-child,td.data table tbody th > p.help:last-child{margin-bottom:10px;line-height:1.4}td.data table tbody td:first-child,td.data table tbody th:first-child{padding-left:2px}td.data table tbody td.last,td.data table tbody th.last{padding-left:1.5%}td.data table tbody th{font-weight:700;text-align:left}td.data table tbody td{font-size:12px}td.data table tbody td.date_info{white-space:nowrap}td.data table tbody tr.hidden{display:none}td.data table tbody tr.alert_open{background-color:#fff6e5}td.data table tbody tr.downtime_open{background-color:#ffe2e5}td.data table tbody tr.incident_open{background-color:#ffe2e5}td.data table tbody tr:hover,td.data table tbody tr.hovered{background-color:#eeffff}td.data table tfoot{color:#999999;font-size:0.857em;margin-bottom:1.333em;line-height:1.333em;text-align:right}td.data table tfoot td{padding-top:10px}td.data table tfoot ul.action_bar:last-child{margin-bottom:0}td.data table.zebra tbody tr td,td.data table.zebra tbody tr th{border-bottom:none}td.data table.zebra tbody tr:nth-child(even){background:#eeeeee}td.data table.zebra tbody tr:nth-child(even):hover{background-color:#eeffff}
+
+    td h1, td h2 {
+        color: #666 !important;
+    }
+    td h1 {
+        font-size: 22px;
+    }
+    td h2 {
+        font-size: 18px;
+    }
+
+    .small {font-size:90%;}
+    .deemphasize_value {display:block;color:#777;}
+
+</style>
+
+<!-- Targeting Windows Mobile -->
+<!--[if IEMobile 7]>
+<style type="text/css">
+
+</style>
+<![endif]-->   
+
+<!-- ***********************************************
+****************************************************
+END MOBILE TARGETING
+****************************************************
+************************************************ -->
+
+<!--[if gte mso 9]>
+    <style>
+    /* Target Outlook 2007 and 2010 */
+    </style>
+<![endif]-->
+
+<!-- Wrapper/Container Table: Use a wrapper table to control the width and the background color consistently of your email. Use this approach instead of setting attributes on the body tag. -->
+<table cellpadding="0" cellspacing="0" border="0" id="backgroundTable">
+    <tr>
+        <td valign="top" style="padding:20px">
+        
+        <table cellpadding="0" cellspacing="0" border="0" align="center">
+            <!-- LOGOS -->
+            <tr>
+                <td width="800" valign="top" align="left">
+                    <table cellpadding="0" cellspacing="0" border="0" align="center">
+                        <tr>
+                            <td width="400" valign="baseline" align="left">
+                                <img src="https://rpm.newrelic.com/images/v3/template/logo-newrelic.png?1343344549" alt="NewRelic" title="NewRelic" width="279" height="50" />
+                            </td>
+                            <td width="400" valign="baseline" align="right">
+                                <img src="{{ config.PROJECT_LOGO }}" alt="{{ name|capitalize }}" title="{{ name|capitalize }}" />
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr><td>&nbsp;</td></tr>
+            <tr><td>&nbsp;</td></tr>
+            <!-- HEADLINE -->
+            <tr>
+                <td>
+                    <h1>Summary Report for last {{ hours }} hours</h1>
+                </td>
+            </tr>
+            <tr><td>&nbsp;</td></tr>
+            <!-- APPS SUMMARY -->
+            <tr>
+                <td><h2>Server Summary</h2></td>
+            </tr>
+            <tr>
+                <td class="data">{{ serverssum }}</td>
+            </tr>
+            <tr><td>&nbsp;</td></tr>
+            <!-- APPS SUMMARY -->
+            <tr>
+                <td><h2>Applications Summary</h2></td>
+            </tr>
+            <tr>
+                <td class="data">{{ appssum }}</td>
+            </tr>
+            <tr><td>&nbsp;</td></tr>
+            <!-- ERRORS -->
+            {% for name, data in errors %}
+            <tr>
+                <td><h2>Errors (<a href="http://{{ name }}" target="_blank">{{ name }}</a>)</h2></td>
+            </tr>
+            <tr>
+                <td class="data">{{ data }}</td>
+            </tr>
+            <tr><td>&nbsp;</td></tr>
+            {% endfor %}
+        </table>
+
+        </td>
+    </tr>
+</table>  
+<!-- End of wrapper table -->
+</body>
+</html>

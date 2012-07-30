@@ -1,0 +1,7 @@
+requests
+beautifulsoup4
+jinja2
+turbomail
+cssutils
+inlinestyler
+lxml
