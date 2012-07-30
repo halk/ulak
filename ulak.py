@@ -18,7 +18,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('projects', metavar='PROJECT', nargs='+', help='The projects to be included in the report (comma-separated)')
     parser.add_argument('--hours', type=int, default=3, help='Report time period in hours (default: 3)')
-    parser.add_argument('-p', type=bool, nargs='?', default=False, const=True, help='Print report out instead of sending email')
+    parser.add_argument('-p', action='store_const', default=False, const=True, help='Print report out instead of sending email')
     args = parser.parse_args()
 
     # check projects
