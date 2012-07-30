@@ -8,7 +8,7 @@ Trivia: ulak is Turkish and means courier or messenger.
 installation
 ------------
 
-    $ virtualenv --no-site-packages ulak
+    $ virtualenv ulak
     $ cd ulak
     $ source bin/activate
     $ git clone git@github.com:halk/ulak.git
