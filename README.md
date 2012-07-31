@@ -22,9 +22,9 @@ crons (example)
 
     SHELL=/bin/bash
     # will sent a report every 3 hours starting from 11am to 11pm
-    0 11,14,17,20,23 * * * cd /yourDir/ulak/ulak/; source ../bin/activate; python ulak.py --hours=3 yourProject
+    0 11,14,17,20,23 * * * yourUser cd /yourDir/ulak/ulak/ && source ../bin/activate && /yourDir/ulak/bin/python ulak.py --hours=3 yourProject > ulak.log
     # will sent a report of 12 hours on 8am - covering the night
-    0 8 * * * cd /yourDir/ulak/ulak/; source ../bin/activate; python ulak.py --hours=12 yourProject
+    0 8 * * * yourUser cd /yourDir/ulak/ulak/ && source ../bin/activate && /yourDir/ulak/bin/python ulak.py --hours=12 yourProject > ulak.log
 
 troubleshooting
 ---------------
