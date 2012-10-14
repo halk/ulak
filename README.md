@@ -11,7 +11,7 @@ installation
     $ virtualenv ulak
     $ cd ulak
     $ source bin/activate
-    $ git clone git@github.com:halk/ulak.git
+    $ git clone https://github.com/halk/ulak.git
     $ cd ulak
     $ pip install -r requirements.txt
     $ cp config-dist.py config.py
